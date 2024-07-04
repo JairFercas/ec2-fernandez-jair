@@ -66,7 +66,7 @@ fun ItemRecycler(conciertosmusicales: Conciertomusical){
     Card(elevation = CardDefaults.cardElevation(defaultElevation = 4.dp), shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = Color.White) ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = Conciertomusical. , fontWeight = FontWeight.SemiBold)
+                Text(text = Conciertomusical.titulo, fontWeight = FontWeight.SemiBold)
                 Spacer(modifier = Modifier.height(15.dp))
                 Text(text = Conciertomusical.descripcion)
                 Spacer(modifier = Modifier.height(15.dp))
