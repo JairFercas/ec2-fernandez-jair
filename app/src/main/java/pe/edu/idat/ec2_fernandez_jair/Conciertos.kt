@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -47,16 +49,28 @@ fun EjemploCard() {
         }
     }
 }
+
+
+@Composable
+fun EjemploRecyclerCard(){
+    LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        items(listarConciertos()){
+                conciertosmusicales -> ItemRecycler(conciertosmusicales = conciertosmusicales)
+        }
+    }
+}
+
+
 @Composable
 fun ItemRecycler(conciertosmusicales: Conciertomusical){
     Card(elevation = CardDefaults.cardElevation(defaultElevation = 4.dp), shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = Color.White) ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = mascota.nombre, fontWeight = FontWeight.SemiBold)
+                Text(text = Conciertomusical.titulo , fontWeight = FontWeight.SemiBold)
                 Spacer(modifier = Modifier.height(15.dp))
-                Text(text = mascota.raza)
+                Text(text = Conciertomusical.descripcion)
                 Spacer(modifier = Modifier.height(15.dp))
-                Text(text = mascota.raza)
+                Text(text = Conciertomusical.fecha)
 
             }
 
@@ -68,7 +82,7 @@ fun ItemRecycler(conciertosmusicales: Conciertomusical){
 
 
 
-fun listarMascotas(): List<Conciertomusical> {
+fun listarConciertos(): List<Conciertomusical> {
     return listOf(
         Conciertomusical("cantante 1", "sudamerica", "03/07/2024" ),
         Conciertomusical("cantante 2", "sudamerica", "03/07/2024" ),
