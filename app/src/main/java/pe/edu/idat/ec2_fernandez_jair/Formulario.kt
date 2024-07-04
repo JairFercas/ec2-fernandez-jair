@@ -45,7 +45,7 @@ fun Formulario(){
             espacio(tamanio = 10)
             OutlinedTextField(value = email, onValueChange = {email=it}, modifier = Modifier.fillMaxWidth(), label = { Text(text = "Ingrese su talla")}, maxLines = 1, singleLine = true)
             espacio(tamanio = 25)
-            Text(text = "Seleccione Programas que domine:")
+            Text(text = "Seleccione los Programas que domine:")
             
 
         }
